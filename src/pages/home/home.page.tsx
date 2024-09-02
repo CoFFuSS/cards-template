@@ -1,5 +1,7 @@
+import { PostsList } from '@/components/postsList/postList.components';
+
 export const HomePage = () => (
   <main>
-    <h1>Home</h1>
+    <PostsList />
   </main>
 );

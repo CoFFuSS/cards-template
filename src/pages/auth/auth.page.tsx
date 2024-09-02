@@ -1,5 +1,7 @@
+import SignIn from '@/components/signIn/signIn.component';
+
 export const AuthPage = () => (
   <div>
-    <h1>Auth</h1>
+    <SignIn />
   </div>
 );
