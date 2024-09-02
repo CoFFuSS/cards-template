@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import { ErrorBoundary } from './errorBoundary/errorBoundary.component';
-
+import { ErrorBoundary } from '../errorBoundary/errorBoundary.component';
 import { BasicLayout } from '../basicLayout/basicLayout.component';
 import { routes } from '../../constants/routes.constant';
 
