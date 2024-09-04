@@ -1,3 +1,13 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: $s40;
+
+  padding: $s40 0;
+
+  text-align: center;
+}
+
 .container {
   position: relative;
   display: grid;

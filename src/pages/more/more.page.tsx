@@ -6,6 +6,8 @@ import { requestedPosts } from '@/store/selectors';
 import { PostComment, useGetPostsCommentsQuery } from '@/services/api/commentsApi';
 import { Post } from '@/services/api/postsApi';
 
+import styles from './more.module.scss';
+
 export const MorePage = () => {
   const [filteredComments, setFilteredComments] = useState<PostComment[]>([]);
   const [selectedPosts, setSelectedPosts] = useState<Post>();
@@ -27,17 +29,18 @@ export const MorePage = () => {
   }
 
   return (
-    <main>
+    <section className={styles.container}>
       <h1>{selectedPosts?.title}</h1>
+      <p>{selectedPosts?.body}</p>
       <h2>Comments</h2>
       <ul>
         {filteredComments?.map(({ id: commentId, name, body }) => (
           <li key={commentId}>
-            <h5>Username: {name}</h5>
-            <h6>Comment: {body}</h6>
+            <h5>{name}</h5>
+            <h6>{body}</h6>
           </li>
         ))}
       </ul>
-    </main>
+    </section>
   );
 };

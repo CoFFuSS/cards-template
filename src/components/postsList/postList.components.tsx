@@ -21,8 +21,7 @@ export const PostsList = () => {
   }
 
   return (
-    <section>
-      <h1>Posts</h1>
+    <section className={styles.posts}>
       <div className={styles.container}>
         {posts?.map(({ id, title, body }) => (
           <Post

@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
 
+import { formatText } from '@/utils/formatText';
+
 import styles from './post.module.scss';
+import { PostProps } from './post.types';
+import { MAX_TITLE_LENGTH } from './post.constants';
 
-interface PostProps {
-  id: number;
-  title: string;
-  body: string;
-}
+export const Post = ({ id, title }: PostProps) => {
+  const formattedTitle = formatText(title, MAX_TITLE_LENGTH);
 
-export const Post = ({ id, title, body }: PostProps) => (
-  <Link to={`/more/${id}`}>
-    <article className={styles.container}>
-      <h2>{title}</h2>
-      <p>{body}</p>
-    </article>
-  </Link>
-);
+  return (
+    <Link to={`/more/${id}`}>
+      <article className={styles.container}>
+        <h4>{formattedTitle}</h4>
+      </article>
+    </Link>
+  );
+};
