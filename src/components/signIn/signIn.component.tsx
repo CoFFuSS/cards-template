@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { setUser } from '@/store/slices/userSlice';
 import { useGetUserByUsernameQuery } from '@/services/api/userApi';
+
+import styles from './signIn.module.scss';
 
 const SignIn = () => {
   const [username, setUsername] = useState('');
@@ -19,26 +22,32 @@ const SignIn = () => {
 
     if (users && users.length > 0) {
       dispatch(setUser(users[0]));
+      toast.success('Login successful!');
       navigate('/');
     } else {
-      alert('User not found!');
+      toast.error('User not found!');
     }
   };
 
   if (error) {
-    return <h1>Opps... Something went wrong</h1>;
+    toast.error('Oops... Something went wrong');
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type='text'
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder='Username'
-      />
-      <button type='submit'>Submit</button>
-    </form>
+    <div className={styles.container}>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit}
+      >
+        <input
+          type='text'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder='Username'
+        />
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
   );
 };
 

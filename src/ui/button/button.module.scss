@@ -1,9 +1,41 @@
 .first {
   cursor: pointer;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: $s128;
   height: $s40;
 
-  background-color: $light-gray;
+  color: $dark-blue;
+
+  background-color: $yellow;
+  border: none;
   border-radius: $s4;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+
+  h6 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: inherit;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: $yellow-hover;
+  }
+
+  &:active {
+    transform: translateY(0);
+    background-color: #a0a0a0;
+  }
+
+  &:focus {
+    outline: $s2 solid #bfbfbf;
+  }
 }
