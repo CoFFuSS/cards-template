@@ -29,7 +29,7 @@ export const Header = () => {
         <Link to={RoutesEnum.Home}>
           <h1>Just Test</h1>
         </Link>
-        <div className={styles.content_container}>
+        <div className={styles.content}>
           <h6>{userName}</h6>
           <Button
             text={logInButtonText}

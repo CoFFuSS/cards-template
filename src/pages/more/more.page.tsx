@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import { useAppSelector } from '@/hooks/redux';
 import { requestedPosts } from '@/store/selectors';
@@ -25,7 +26,7 @@ export const MorePage = () => {
   }, [comments, id, posts]);
 
   if (error) {
-    return <h1>Error...</h1>;
+    toast.error('Error loading comments!');
   }
 
   return (

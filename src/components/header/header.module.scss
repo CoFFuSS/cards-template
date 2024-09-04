@@ -14,4 +14,8 @@
 .content {
   display: flex;
   flex-direction: row;
+  gap: $s12;
+  align-items: center;
+
+  text-align: center;
 }

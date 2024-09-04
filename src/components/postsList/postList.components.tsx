@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import { setPosts } from '@/store/slices/postsSlice';
 import { useGetPostsQuery } from '@/services/api/postsApi';
+import { Post } from '@/components/post/post.component';
 
 import styles from './postList.module.scss';
-
-import { Post } from '../post/post.component';
 
 export const PostsList = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export const PostsList = () => {
   }
 
   if (error) {
-    return <div>Error occurred: {JSON.stringify(error)}</div>;
+    toast.error('Error loading posts!');
   }
 
   return (

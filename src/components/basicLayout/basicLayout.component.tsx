@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
-import styles from './basicLayout.module.scss';
+import { Header } from '@/components/header/header.component';
 
-import { Header } from '../header/header.component';
+import styles from './basicLayout.module.scss';
 
 export const BasicLayout = () => (
   <main>
