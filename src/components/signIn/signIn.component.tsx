@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { setUser } from '@/store/slices/userSlice';
-import { useGetUserByUsernameQuery } from '@/store/slices/userApi';
+import { useGetUserByUsernameQuery } from '@/services/api/userApi';
 
 const SignIn = () => {
   const [username, setUsername] = useState('');
@@ -26,7 +26,7 @@ const SignIn = () => {
   };
 
   if (error) {
-    return <h1>{JSON.stringify(error)}</h1>;
+    return <h1>Opps... Something went wrong</h1>;
   }
 
   return (

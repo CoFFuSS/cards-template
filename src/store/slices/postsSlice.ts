@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Post } from './postsApi';
+import { Post } from '../../services/api/postsApi';
 
 interface PostsState {
   posts: Post[] | null;

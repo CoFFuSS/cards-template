@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { RoutesEnum } from '@/constants/routesEnum.constant';
@@ -26,7 +26,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <h1>Just Test</h1>
+        <Link to={RoutesEnum.Home}>
+          <h1>Just Test</h1>
+        </Link>
         <div className={styles.content_container}>
           <h6>{userName}</h6>
           <Button

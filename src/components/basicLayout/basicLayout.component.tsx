@@ -1,12 +1,14 @@
 import { Outlet } from 'react-router-dom';
 
+import styles from './basicLayout.module.scss';
+
 import { Header } from '../header/header.component';
-import { Footer } from '../footer/footer.component';
 
 export const BasicLayout = () => (
   <main>
     <Header />
-    <Outlet />
-    <Footer />
+    <div className={styles.container}>
+      <Outlet />
+    </div>
   </main>
 );

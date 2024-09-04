@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $s20;
+
+  min-height: 340px;
+  padding: $s12 $s20;
+
+  border: $s4 solid $yellow;
+  border-radius: $s12;
+}

@@ -1,5 +1,5 @@
 export const enum RoutesEnum {
   Home = '/',
   Auth = '/auth',
-  More = '/more',
+  More = `/more/:id`,
 }
