@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# React Redux Toolkit Query App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application that demonstrates the use of Redux Toolkit and Redux Toolkit Query to fetch and manage posts from an API. The application includes a basic front-end where users can view posts, log in, and see detailed information about each post along with its comments.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Main Page**: Displays a list of posts fetched from an API using Redux Toolkit Query.
+- **Login**: Users can log in by entering a username. If the user exists, their username will be displayed, and the "Sign In" button will change to "Log Out."
+- **Post Details**: Clicking on a post navigates to a detailed view of the post, showing its full content and comments.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A fast development environment for modern web projects.
+- **Yarn**: Dependency management tool.
+- **react-toastify**: A react-toast library for toasts.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Prerequisites
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- [Docker](https://www.docker.com/get-started) installed on your machine.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Running the Application with Docker
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+1. **Clone the repository**:
+
+   ```bash
+    git clone <your-repo-url>
+
+    cd <your-repo-name>
+
+    cd cards-template
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+    yarn install
+   ```
+
+3. **Rebuild the Application**:
+
+   ```bash
+    yarn build
+   ```
+
+4. **Rebuild the Docker Image**:
+
+   ```bash
+    docker build -t my-react-app .
+   ```
+
+5. **Run the Docker Container**:
+
+```bash
+   docker run -p 3000:3000 my-react-app
 ```
